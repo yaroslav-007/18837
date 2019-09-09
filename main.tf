@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "yaroslav-org"
+
+    workspaces {
+      name = "18837"
+    }
+  }
+}
+
 provider "aws" {
   region = "us-east-1"
 }
@@ -8,7 +19,7 @@ provider "aws" {
 # Rename the resource and run `terraform state mv` to apply the rename in the
 # state. Detailed information on the `state move` command can be found in the
 # documentation online: https://www.terraform.io/docs/commands/state/mv.html
-resource "aws_db_instance" "56-xxxx" {
+resource "aws_db_instance" "Yaroslav" {
   allocated_storage         = 20
   storage_type              = "gp2"
   engine                    = "mysql"
